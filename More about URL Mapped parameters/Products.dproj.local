@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/11/04 20:00:11.000.396,=C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/11/04 20:00:11.000.535,=C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/11/04 20:00:52.000.657,C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\DelphiMVC\More about URL Mapped parameters\MyWebModuleU.dfm</Transaction>
+    <Transaction>2023/11/04 20:00:52.000.657,C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\DelphiMVC\More about URL Mapped parameters\MyWebModuleU.pas</Transaction>
+    <Transaction>2023/11/04 20:01:13.000.267,C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\DelphiMVC\More about URL Mapped parameters\ProductsController.pas</Transaction>
+    <Transaction>2023/11/04 20:01:31.000.705,C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\jsarona\Documents\Embarcadero\Studio\Projects\DelphiMVC\More about URL Mapped parameters\Products.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

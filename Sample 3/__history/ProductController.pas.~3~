@@ -1,0 +1,34 @@
+unit ProductController;
+
+interface
+
+uses
+  MVCFramework, MVCFramework.Commons, MVCFramework.Serializer.Commons;
+
+type
+
+  [MVCPath('/product')]
+  TProductController = class(TMVCController) 
+  public
+    [MVCPath('/posts/($user)/($year)/($month)')]
+    [MVCHTTPMethod([httpGET])]
+    procedure GetProducts;
+  end;
+
+implementation
+
+uses
+  System.SysUtils, MVCFramework.Logger, System.StrUtils;
+
+procedure TProductController.GetProducts;
+var
+  year, month: Integer;
+  user: string;
+begin
+  user := Context.Request.Params['user']; //user is "danieleteti"
+  year := Context.Request.Params['year'].ToInteger; //year is 2019
+  month := Context.Request.ParamsAsInteger['month']; //month is 11
+  //other code...
+end;
+
+end.

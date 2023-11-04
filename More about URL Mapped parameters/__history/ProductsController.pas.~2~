@@ -1,0 +1,47 @@
+unit ProductsController;
+
+interface
+
+uses
+  MVCFramework, MVCFramework.Commons, MVCFramework.Serializer.Commons;
+
+type
+
+  [MVCPath('/products')] //MVCPath used at controller level
+  TProductsController = class(TMVCController)
+  public
+    [MVCPath('/($productid)')]
+    procedure GetProductsByID(const productid: Integer);
+
+    [MVCPath('/categories/($category)')]
+    procedure GetProductsByCategory(const category: String);
+
+    [MVCPath('/categories/($category)/($offer)')]
+    procedure GetProductsByCategoryAndOffer(
+    const category: String; const offer: String);
+  end;
+
+implementation
+
+uses
+  System.SysUtils, MVCFramework.Logger, System.StrUtils;
+
+procedure TProductsController.GetProductsByID(
+  const productid: Integer);
+begin
+  //just use the paramater "productid" as in a normal method!
+end;
+
+procedure TProductsController.GetProductsByCategory(
+  const category: String);
+begin
+  //just use "category"
+end;
+
+procedure TProductsController.GetProductsByCategoryAndOffer(
+  const category: String; const offer: String);
+begin
+  //just use "category" and "offer"
+end;
+
+end.
