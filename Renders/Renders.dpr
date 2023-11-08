@@ -13,7 +13,9 @@ uses
   IdContext,
   IdHTTPWebBrokerBridge,
   RenderSampleU in 'RenderSampleU.pas',
-  RenderWebModuleU in 'RenderWebModuleU.pas' {RenderWebModule: TWebModule};
+  RenderWebModuleU in 'RenderWebModuleU.pas' {RenderWebModule: TWebModule},
+  BusinessObjectsU in 'BusinessObjectsU.pas',
+  MyDataModuleU in 'MyDataModuleU.pas' {MyDataModule: TDataModule};
 
 {$R *.res}
 

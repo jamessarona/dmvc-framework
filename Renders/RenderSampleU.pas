@@ -7,21 +7,42 @@ uses
 
 type
 
-  [MVCPath('/api/customers')] {this controller handles "customers"}
+  [MVCPath('/api')] {this controller handles "customers"}
   TRenderSampleController = class(TMVCController) 
   public
     {this route requires a parameter named "id"}
-    [MVCPath('/($id)')]
+    [MVCPath('/customers/($id)')]
     {and can be called only with GET HTTP verb}
     [MVCHTTPMethods([httpGET])]
     {the action prototype must match with the parameter that we expect from the route}
     procedure GetCustomer(const id: Integer);
+
+    [MVCPath('/customers')]
+    [MVCHTTPMethods([httpGET])]
+    procedure GetDbCustomers;
+
+    [MVCPath('/people/($id)')]
+    [MVCHTTPMethods([httpGET])]
+    procedure GetPerson(const id: Integer);
+
+    [MVCPath('/people')]
+    [MVCHTTPMethods([httpPOST])]
+    procedure CreatePerson;
+
+    [MVCPath('/dictionary')]
+    [MVCHTTPMethods([httpGET])]
+    procedure GetDictionary;
+
+    [MVCPath('/photo/($id)')]
+    [MVCHTTPMethods([httpGET])]
+    procedure GetCustomerPhoto(const id: Integer);
   end;
 
 implementation
 
 uses
-  BusinessObjectsU, System.IOUtils, System.Classes, MVCFramework.Logger {where our TCustomer class is declared};
+  BusinessObjectsU, System.IOUtils, System.Classes, MVCFramework.Logger,
+  MyDataModuleU, System.JSON, System.SysUtils {where our TCustomer class is declared};
 
 procedure TRenderSampleController.GetCustomer(const id: Integer);
 var
@@ -46,4 +67,78 @@ begin
     lCust.Free; {free lCust manually for now}
   end;
 end;
+
+procedure TRenderSampleController.GetPerson(const id: Integer);
+var
+//  lPerson: TPerson;
+  lPerson: TJSONObject;
+begin
+//  lPerson := TPerson.Create;
+  lPerson := TJSONObject.Create;
+  try
+//    lPerson.FirstName := 'James Angelo';
+//    lPerson.LastName := 'Sarona';
+//    lPerson.Age := 40;
+//    lPerson.PrimaryContact.ContactType := 'email';
+//    lPerson.PrimaryContact.Value := 'james.sarona@activesystems.ph';
+
+    lPerson.AddPair('firstName', 'James');
+    lPerson.AddPair('lastName', 'Sarona');
+    lPerson.AddPair('DOB', EncodeDate(1975, 5, 2));
+    lPerson.AddPair('married', TJSONTrue.Create);
+    Render(lPerson, false);
+  finally
+    lPerson.Free;
+  end;
+end;
+
+procedure TRenderSampleController.CreatePerson;
+var
+  lPerson: TPerson;
+begin
+  lPerson := Context.Request.BodyAs<TPerson>;
+  try
+
+  finally
+    lPerson.Free;
+  end;
+  Render201Created('', 'Person created');
+end;
+
+procedure TRenderSampleController.GetDbCustomers;
+var
+  lCustomerModule: TMyDataModule;
+begin
+  lCustomerModule := TMyDataModule.Create(nil);
+  try
+    lCustomerModule.QryCustomers.Open();
+    Render(lCustomerModule.QryCustomers, False);
+  finally
+    lCustomerModule.Free;
+  end;
+end;
+
+procedure TRenderSampleController.GetDictionary;
+var
+  lDict: TMVCStringDictionary;
+begin
+  lDict := TMVCStringDictionary.Create;
+  lDict.Items['prop1'] := 'one';
+  lDict.Items['prop2'] := 'two';
+  lDict.Items['prop3'] := 'three';
+  Render(lDict);
+end;
+
+procedure TRenderSampleController.GetCustomerPhoto(const id: Integer);
+var
+  ContentType: String;
+begin
+  ContentType := TMVCMediaType.IMAGE_PNG;
+  Render(TFile.OpenRead('..\..\person.png'));
+
+//  ContentType := TMVCMediaType.APPLICATION_PDF;
+//  Render(TFile.OpenRead('..\..\invoice.pd'));
+
+end;
+
 end.

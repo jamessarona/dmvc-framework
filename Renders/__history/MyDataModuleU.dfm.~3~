@@ -1,0 +1,17 @@
+object DataModule1: TDataModule1
+  Height = 451
+  Width = 575
+  object Connection: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=EMPLOYEE'
+      'User_Name=root'
+      'Password=M@st3rk3y')
+    Left = 176
+    Top = 96
+  end
+  object Query: TFDQuery
+    ConnectionName = 'EMPLOYEE'
+    Left = 176
+    Top = 192
+  end
+end

@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023/11/07 21:29:13.186,=C:\Users\Administrator\Documents\Projects\Delphi\Unit1.pas</Transaction>
-    <Transaction>2023/11/07 21:29:16.218,=C:\Users\Administrator\Documents\Projects\Delphi\Unit2.pas</Transaction>
-    <Transaction>2023/11/07 21:29:29.947,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderWebModuleU.dfm=C:\Users\Administrator\Documents\Projects\Delphi\Unit2.dfm</Transaction>
-    <Transaction>2023/11/07 21:29:29.947,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderWebModuleU.pas=C:\Users\Administrator\Documents\Projects\Delphi\Unit2.pas</Transaction>
-    <Transaction>2023/11/07 21:29:38.060,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderSampleControllerU.pas=C:\Users\Administrator\Documents\Projects\Delphi\Unit1.pas</Transaction>
-    <Transaction>2023/11/07 21:30:05.568,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderSampleU.pas=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderSampleControllerU.pas</Transaction>
-    <Transaction>2023/11/07 21:30:20.386,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Renders.dproj=C:\Users\Administrator\Documents\Projects\Delphi\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>2023/11/07 21:29:13.000.186,=C:\Users\Administrator\Documents\Projects\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/11/07 21:29:16.000.218,=C:\Users\Administrator\Documents\Projects\Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/11/07 21:29:29.000.947,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderWebModuleU.pas=C:\Users\Administrator\Documents\Projects\Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/11/07 21:29:29.000.947,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderWebModuleU.dfm=C:\Users\Administrator\Documents\Projects\Delphi\Unit2.dfm</Transaction>
+    <Transaction>2023/11/07 21:29:38.000.060,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderSampleControllerU.pas=C:\Users\Administrator\Documents\Projects\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/11/07 21:30:05.000.568,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderSampleU.pas=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\RenderSampleControllerU.pas</Transaction>
+    <Transaction>2023/11/07 21:30:20.000.386,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Renders.dproj=C:\Users\Administrator\Documents\Projects\Delphi\Project1.dproj</Transaction>
+    <Transaction>2023/11/07 21:30:33.000.117,=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Unit1.pas</Transaction>
+    <Transaction>2023/11/07 21:31:33.000.174,=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Unit1.pas</Transaction>
+    <Transaction>2023/11/07 21:31:42.000.076,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Customer.pas=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Unit1.pas</Transaction>
+    <Transaction>2023/11/07 23:06:16.000.003,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\BusinessObjectsU.pas=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Customer.pas</Transaction>
+    <Transaction>2023/11/08 21:36:20.000.508,=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Unit1.pas</Transaction>
+    <Transaction>2023/11/08 21:37:11.000.600,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Unit1.pas=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\MyDataModuleU.pas</Transaction>
+    <Transaction>2023/11/08 21:37:11.000.600,C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\Unit1.dfm=C:\Users\Administrator\Documents\Projects\Delphi\DMVC Framework\dmvc-framework\Renders\MyDataModuleU.dfm</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="BusinessObjectsU.pas"/>
+    <File Path="MyDataModuleU.pas"/>
+    <File Path="MyDataModuleU.dfm"/>
+    <File Path="RenderSampleU.pas"/>
+    <File Path="RenderWebModuleU.pas"/>
+    <File Path="RenderWebModuleU.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

@@ -3,9 +3,47 @@ unit BusinessObjectsU;
 interface
 
 uses
-  MVCFramework.Serializer.Commons, System.Classes; {add this unit}
+  MVCFramework.Serializer.Commons, System.Classes, System.Generics.Collections; {add this unit}
 
 type
+  [MVCNameCase(ncLowerCase)]
+  TContact = class
+  private
+    fContactType: String;
+    fValue: String;
+  public
+    property ContactType: String
+      read fContactType write fContactType;
+    property Value: String
+      read fValue write fValue;
+  end;
+
+  TContacts = class(TObjectList<TContact>)
+  end;
+
+  [MVCNameCase(ncLowerCase)]
+  TPerson = class
+  private
+    fAge: UInt8;
+    fLastName: String;
+    fFirstName: String;
+    fPrimaryContact: TContact;
+    fOtherContacts: TContacts;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    property FirstName: String
+      read fFirstName write fFirstName;
+    property LastName: String
+      read fLastName write fLastName;
+    property Age: UInt8
+      read fAge write fAge;
+    property PrimaryContact: TContact
+      read fPrimaryContact;
+    property OtherContacts: TContacts
+      read fOtherContacts;
+  end;
+
   [MVCNameCase(ncLowerCase)] {add this attribute}
   TCustomer = class
   private
@@ -15,7 +53,9 @@ type
     fAddressLine1: String;
     fContactFirst: String;
     fCity: String;
-    fContactLast: String;    fCustomerSecret: String;  public
+    fContactLast: String;
+    fCustomerSecret: String;
+  public
     property ID: Integer
       read fID write fID;
     property Name: String
@@ -79,6 +119,20 @@ end;
 destructor TCustomerWithNotes.Destroy;
 begin
   FNotes.Free;
+  inherited;
+end;
+
+constructor TPerson.Create;
+begin
+  inherited Create;
+  fPrimaryContact := TContact.Create;
+  fOtherContacts := TContacts.Create(True);
+end;
+
+destructor TPerson.Destroy;
+begin
+  fPrimaryContact.Free;
+  fPrimaryContact.Free;
   inherited;
 end;
 
