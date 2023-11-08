@@ -1,0 +1,33 @@
+unit BusinessObjectsU;
+
+interface
+
+type
+  TCustomer = class
+  private
+    fID: Integer;
+    fName: String;
+    fAddressLine2: String;
+    fAddressLine1: String;
+    fContactFirst: String;
+    fCity: String;
+    fContactLast: String;  public
+    property ID: Integer
+      read fID write fID;
+    property Name: String
+      read fName write fName;
+    property ContactFirst: String
+      read fContactFirst write fContactFirst;
+    property ContactLast: String
+      read fContactLast write fContactLast;
+    property AddressLine1: String
+      read fAddressLine1 write fAddressLine1;
+    property AddressLine2: String
+      read fAddressLine2 write fAddressLine2;
+    property City: String
+      read fCity write fCity;
+  end;
+
+implementation
+
+end.
