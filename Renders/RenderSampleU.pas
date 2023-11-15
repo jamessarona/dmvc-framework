@@ -42,7 +42,7 @@ implementation
 
 uses
   BusinessObjectsU, System.IOUtils, System.Classes, MVCFramework.Logger,
-  MyDataModuleU, System.JSON, System.SysUtils {where our TCustomer class is declared};
+  MyDataModuleU, System.JSON, System.SysUtils, System.Generics.Collections {where our TCustomer class is declared};
 
 procedure TRenderSampleController.GetCustomer(const id: Integer);
 var
@@ -95,14 +95,29 @@ end;
 procedure TRenderSampleController.CreatePerson;
 var
   lPerson: TPerson;
+  lPeople: TObjectList<TPerson>;
 begin
-  lPerson := Context.Request.BodyAs<TPerson>;
-  try
-
-  finally
-    lPerson.Free;
+  if Context.Request.QueryStringParam('multi').ToLower() = 'true' then
+  begin
+    lPeople := Context.Request.BodyAsListOf<TPerson>;
+    try
+      LogD(lPeople);
+    finally
+      lPeople.Free;
+    end;
+    Render201Created('', 'People Created');
+  end
+  else
+  begin
+    lPerson := Context.Request.BodyAs<TPerson>;
+    try
+      LogD(lPerson);
+    finally
+      lPerson.Free;
+    end;
+    Render201Created('', 'Person created');
   end;
-  Render201Created('', 'Person created');
+
 end;
 
 procedure TRenderSampleController.GetDbCustomers;

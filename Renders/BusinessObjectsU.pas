@@ -40,6 +40,8 @@ type
       read fAge write fAge;
     property PrimaryContact: TContact
       read fPrimaryContact;
+    { MVCListOf instructs the serializer about the type of the contained objects }
+    [MVCListOf(TContact)]
     property OtherContacts: TContacts
       read fOtherContacts;
   end;
@@ -132,7 +134,7 @@ end;
 destructor TPerson.Destroy;
 begin
   fPrimaryContact.Free;
-  fPrimaryContact.Free;
+  fOtherContacts.Free;
   inherited;
 end;
 
